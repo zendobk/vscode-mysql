@@ -1,0 +1,25 @@
+{
+  "name": "mysql",
+  "displayName": "mysql",
+  "description": "",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "mysql",
+      "aliases": ["MySQL", "mysql"],
+      "extensions": [".sql"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "mysql",
+      "scopeName": "source.mysql",
+      "path": "./syntaxes/mysql.tmLanguage.json"
+    }]
+  }
+}
