@@ -1,32 +1,121 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "MySQL",
-	"patterns": [
-		{
-			"include": "#keywords"
-		},
-		{
-			"include": "#strings"
-		}
-	],
-	"repository": {
-		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.mysql",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
-		},
-		"strings": {
-			"name": "string.quoted.double.mysql",
-			"begin": "\"",
-			"end": "\"",
-			"patterns": [
-				{
-					"name": "constant.character.escape.mysql",
-					"match": "\\\\."
-				}
-			]
-		}
-	},
-	"scopeName": "source.mysql"
+  "name": "MySQL",
+  "scopeName": "source.mysql",
+  "fileTypes": ["sql"],
+  "patterns": [
+    {
+      "include": "#comments"
+    },
+    {
+      "include": "#keywords"
+    },
+    {
+      "include": "#dataTypes"
+    },
+    {
+      "include": "#functions"
+    },
+    {
+      "include": "#strings"
+    },
+    {
+      "include": "#numbers"
+    },
+    {
+      "include": "#operators"
+    },
+    {
+      "include": "#variables"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-dash.sql",
+          "match": "--.*$"
+        },
+        {
+          "name": "comment.block.sql",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.sql",
+          "match": "\\b(SELECT|INSERT|UPDATE|DELETE|FROM|WHERE|JOIN|LEFT|RIGHT|INNER|OUTER|ON|GROUP BY|ORDER BY|HAVING|AS|LIMIT|OFFSET|DISTINCT|UNION|ALL|INTO|VALUES|CREATE|TABLE|ALTER|DROP|DATABASE|INDEX|VIEW|TRIGGER|PROCEDURE|FUNCTION|IF|ELSE|THEN|END|LOOP|WHILE|REPEAT|DECLARE|SET|CALL|BEGIN|COMMIT|ROLLBACK|GRANT|REVOKE|USE|SHOW|DESCRIBE|EXPLAIN|LOCK|UNLOCK|WITH|RECURSIVE|CASE|WHEN|DEFAULT|FOREIGN|PRIMARY|KEY|AUTO_INCREMENT|REFERENCES|CONSTRAINT|CHECK|DEFAULT|UNIQUE)\\b"
+        }
+      ]
+    },
+    "dataTypes": {
+      "patterns": [
+        {
+          "name": "storage.type.sql",
+          "match": "\\b(INT|INTEGER|SMALLINT|TINYINT|MEDIUMINT|BIGINT|DECIMAL|NUMERIC|FLOAT|DOUBLE|REAL|BIT|BOOLEAN|CHAR|VARCHAR|TEXT|TINYTEXT|MEDIUMTEXT|LONGTEXT|BLOB|TINYBLOB|MEDIUMBLOB|LONGBLOB|DATE|TIME|DATETIME|TIMESTAMP|YEAR|JSON|ENUM|SET)\\b"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "support.function.sql",
+          "match": "\\b(AVG|COUNT|MIN|MAX|SUM|UCASE|LCASE|MID|LEN|ROUND|NOW|FORMAT|CURDATE|CURTIME|DATE_ADD|DATE_SUB|DATEDIFF|TIMEDIFF|IFNULL|ISNULL|COALESCE|GREATEST|LEAST|CONCAT|SUBSTRING|CHAR_LENGTH|POSITION|LOCATE|INSTR|REPLACE|TRIM|LPAD|RPAD|CONVERT|CAST|UNHEX|HEX|MD5|SHA1|SHA2|AES_ENCRYPT|AES_DECRYPT|UUID|FLOOR|CEIL|CEILING|POWER|EXP|LOG|LN|PI|SIN|COS|TAN|ASIN|ACOS|ATAN|ATAN2|DEGREES|RADIANS|SIGN|SQRT)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.single.sql",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.sql",
+              "match": "''"
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.double.sql",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.sql",
+              "match": "\"\""
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.sql",
+          "match": "\\b\\d+(\\.\\d+)?(e[+-]?\\d+)?\\b"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.sql",
+          "match": "[=><!~]+|\\b(AND|OR|NOT|IN|BETWEEN|LIKE|IS|NULL|EXISTS|ANY|ALL)\\b"
+        }
+      ]
+    },
+    "variables": {
+      "patterns": [
+        {
+          "name": "variable.other.sql",
+          "match": "@[a-zA-Z0-9_]+"
+        }
+      ]
+    }
+  },
+  "scope": "source.mysql"
 }
