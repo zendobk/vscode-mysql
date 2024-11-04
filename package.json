@@ -10,16 +10,32 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "mysql",
-      "aliases": ["MySQL", "mysql"],
-      "extensions": [".sql"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "mysql",
-      "scopeName": "source.mysql",
-      "path": "./syntaxes/mysql.tmLanguage.json"
-    }]
+    "languages": [
+      {
+        "id": "mysql",
+        "aliases": [
+          "MySQL",
+          "mysql"
+        ],
+        "extensions": [
+          ".sql"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "mysql",
+        "scopeName": "source.sql",
+        "path": "./syntaxes/mysql.tmLanguage.json"
+      }
+    ],
+    "themes": [
+      {
+        "label": "MySQL",
+        "uiTheme": "vs-dark",
+        "path": "./themes/mysql-dark.json"
+      }
+    ]
   }
 }
