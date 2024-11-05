@@ -4,6 +4,10 @@
   "description": "",
   "version": "0.0.1",
   "publisher": "zendobk",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:zendobk/vscode-mysql.git"
+  },
   "engines": {
     "vscode": "^1.95.0"
   },
