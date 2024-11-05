@@ -42,6 +42,9 @@
         "uiTheme": "vs-dark",
         "path": "./themes/mysql-dark.json"
       }
-    ]
+    ],
+    "configurationDefaults": {
+      "workbench.colorTheme": "MySQL"
+    }
   }
 }
