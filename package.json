@@ -1,8 +1,9 @@
 {
   "name": "mysql",
-  "displayName": "mysql",
+  "displayName": "MySQL",
   "description": "",
   "version": "0.0.1",
+  "publisher": "zendobk",
   "engines": {
     "vscode": "^1.95.0"
   },
@@ -26,7 +27,7 @@
     "grammars": [
       {
         "language": "mysql",
-        "scopeName": "source.sql",
+        "scopeName": "source.mysql",
         "path": "./syntaxes/mysql.tmLanguage.json"
       }
     ],

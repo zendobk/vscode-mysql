@@ -1,6 +1,6 @@
 {
   "name": "MySQL",
-  "scopeName": "source.sql",
+  "scopeName": "source.mysql",
   "fileTypes": ["sql"],
   "patterns": [
     {
@@ -50,20 +50,20 @@
     "comments": {
       "patterns": [
         {
-          "name": "comment.line.double-dash.sql",
+          "name": "comment.line.double-dash.mysql",
           "match": "--.*$"
         },
         {
-          "name": "comment.block.sql",
+          "name": "comment.block.mysql",
           "begin": "/\\*",
           "end": "\\*/"
         },
         {
-          "name": "comment.line.hash.sql",
+          "name": "comment.line.hash.mysql",
           "match": "#.*$"
         },
         {
-          "name": "comment.conditional.sql",
+          "name": "comment.conditional.mysql",
           "begin": "/\\*!",
           "end": "\\*/"
         }
@@ -72,7 +72,7 @@
     "keywords": {
       "patterns": [
         {
-          "name": "keyword.control.sql",
+          "name": "keyword.control.mysql",
           "match": "(?i)\\b(SELECT|INSERT|UPDATE|DELETE|FROM|WHERE|JOIN|LEFT|RIGHT|INNER|OUTER|ON|GROUP BY|ORDER BY|HAVING|AS|LIMIT|OFFSET|DISTINCT|UNION|ALL|INTO|VALUES|CREATE|TABLE|ALTER|DROP|DATABASE|INDEX|VIEW|TRIGGER|PROCEDURE|FUNCTION|IF|ELSE|THEN|END|LOOP|WHILE|REPEAT|DECLARE|SET|CALL|BEGIN|COMMIT|ROLLBACK|GRANT|REVOKE|USE|SHOW|DESCRIBE|EXPLAIN|LOCK|UNLOCK|WITH|RECURSIVE|CASE|WHEN|DEFAULT|FOREIGN|PRIMARY|KEY|AUTO_INCREMENT|REFERENCES|CONSTRAINT|CHECK|DEFAULT|UNIQUE|PARTITION BY|WINDOW|CUME_DIST|RANK|DENSE_RANK|ROW_NUMBER|WITH ROLLUP)\\b"
         }
       ]
@@ -80,7 +80,7 @@
     "dataTypes": {
       "patterns": [
         {
-          "name": "storage.type.sql",
+          "name": "storage.type.mysql",
           "match": "(?i)\\b(INT|INTEGER|SMALLINT|TINYINT|MEDIUMINT|BIGINT|DECIMAL|NUMERIC|FLOAT|DOUBLE|REAL|BIT|BOOLEAN|CHAR|VARCHAR|TEXT|TINYTEXT|MEDIUMTEXT|LONGTEXT|BLOB|TINYBLOB|MEDIUMBLOB|LONGBLOB|DATE|TIME|DATETIME|TIMESTAMP|YEAR|JSON|ENUM|SET)\\b"
         }
       ]
@@ -88,7 +88,7 @@
     "functions": {
       "patterns": [
         {
-          "name": "support.function.sql",
+          "name": "support.function.mysql",
           "match": "(?i)\\b(AVG|COUNT|MIN|MAX|SUM|UCASE|LCASE|MID|LEN|ROUND|NOW|FORMAT|CURDATE|CURTIME|DATE_ADD|DATE_SUB|DATEDIFF|TIMEDIFF|IFNULL|ISNULL|COALESCE|GREATEST|LEAST|CONCAT|SUBSTRING|CHAR_LENGTH|POSITION|LOCATE|INSTR|REPLACE|TRIM|LPAD|RPAD|CONVERT|CAST|UNHEX|HEX|MD5|SHA1|SHA2|AES_ENCRYPT|AES_DECRYPT|UUID|FLOOR|CEIL|CEILING|POWER|EXP|LOG|LN|PI|SIN|COS|TAN|ASIN|ACOS|ATAN|ATAN2|DEGREES|RADIANS|SIGN|SQRT|DATE_FORMAT|TIME_TO_SEC|SEC_TO_TIME|JSON_TABLE|ST_Distance)\\b"
         }
       ]
@@ -96,34 +96,34 @@
     "strings": {
       "patterns": [
         {
-          "name": "string.quoted.single.sql",
+          "name": "string.quoted.single.mysql",
           "begin": "'",
           "end": "'",
           "patterns": [
             {
-              "name": "constant.character.escape.sql",
+              "name": "constant.character.escape.mysql",
               "match": "''"
             }
           ]
         },
         {
-          "name": "string.quoted.double.sql",
+          "name": "string.quoted.double.mysql",
           "begin": "\"",
           "end": "\"",
           "patterns": [
             {
-              "name": "constant.character.escape.sql",
+              "name": "constant.character.escape.mysql",
               "match": "\"\""
             }
           ]
         },
         {
-          "name": "string.quoted.multi-line.sql",
+          "name": "string.quoted.multi-line.mysql",
           "begin": "`",
           "end": "`",
           "patterns": [
             {
-              "name": "constant.character.escape.sql",
+              "name": "constant.character.escape.mysql",
               "match": "``"
             }
           ]
@@ -133,7 +133,7 @@
     "numbers": {
       "patterns": [
         {
-          "name": "constant.numeric.sql",
+          "name": "constant.numeric.mysql",
           "match": "\\b\\d+(\\.\\d+)?(e[+-]?\\d+)?\\b"
         }
       ]
@@ -141,7 +141,7 @@
     "operators": {
       "patterns": [
         {
-          "name": "keyword.operator.sql",
+          "name": "keyword.operator.mysql",
           "match": "[=><!~]+|(?i)\\b(AND|OR|NOT|IN|BETWEEN|LIKE|IS|NULL|EXISTS|ANY|ALL)\\b"
         }
       ]
@@ -149,7 +149,7 @@
     "advancedOperators": {
       "patterns": [
         {
-          "name": "keyword.operator.advanced.sql",
+          "name": "keyword.operator.advanced.mysql",
           "match": "(\\->|\\->>|\\||\\&|\\^|\\~)"
         }
       ]
@@ -157,15 +157,15 @@
     "variables": {
       "patterns": [
         {
-          "name": "variable.other.sql",
+          "name": "variable.other.mysql",
           "match": "@[a-zA-Z0-9_]+"
         },
         {
-          "name": "variable.global.sql",
+          "name": "variable.global.mysql",
           "match": "@@global\\.[a-zA-Z0-9_]+"
         },
         {
-          "name": "variable.session.sql",
+          "name": "variable.session.mysql",
           "match": "@@session\\.[a-zA-Z0-9_]+"
         }
       ]
@@ -173,11 +173,11 @@
     "errorHighlighting": {
       "patterns": [
         {
-          "name": "invalid.illegal.sql",
+          "name": "invalid.illegal.mysql",
           "match": "(?i)\\b(ERROR|UNEXPECTED|INCOMPLETE)\\b"
         },
         {
-          "name": "invalid.unclosed.string.sql",
+          "name": "invalid.unclosed.string.mysql",
           "begin": "'",
           "while": "(?:(?!').)*$"
         }
@@ -186,7 +186,7 @@
     "temporalDataFunctions": {
       "patterns": [
         {
-          "name": "support.function.temporal.sql",
+          "name": "support.function.temporal.mysql",
           "match": "(?i)\\b(DATE_ADD|DATE_SUB|DATE_FORMAT|CURDATE|CURTIME|TIME_TO_SEC|SEC_TO_TIME|DATEDIFF|TIMEDIFF)\\b"
         }
       ]
@@ -194,7 +194,7 @@
     "nestedQueries": {
       "patterns": [
         {
-          "name": "meta.query.subquery.sql",
+          "name": "meta.query.subquery.mysql",
           "begin": "(?i)\\(SELECT",
           "end": "\\)",
           "patterns": [
@@ -208,7 +208,7 @@
     "macroEmbeddedSQL": {
       "patterns": [
         {
-          "name": "meta.embedded.block.sql",
+          "name": "meta.embedded.block.mysql",
           "begin": "<%",
           "end": "%>",
           "patterns": [
@@ -222,11 +222,11 @@
     "userDefinedSyntax": {
       "patterns": [
         {
-          "name": "support.function.user-defined.sql",
+          "name": "support.function.user-defined.mysql",
           "match": "(?i)\\b(\\w+)\\b"
         }
       ]
     }
   },
-  "scope": "source.sql"
+  "scope": "source.mysql"
 }
