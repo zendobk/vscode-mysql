@@ -8,6 +8,7 @@
     "type": "git",
     "url": "git@github.com:zendobk/vscode-mysql.git"
   },
+  "license": "MIT",
   "engines": {
     "vscode": "^1.95.0"
   },
