@@ -2,8 +2,12 @@
   "name": "mysql",
   "displayName": "MySQL",
   "description": "",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "zendobk",
+  "author": {
+    "name": "Dao Nguyen",
+    "email": "zendobk@gmail.com"
+  },
   "repository": {
     "type": "git",
     "url": "git@github.com:zendobk/vscode-mysql.git"
@@ -41,13 +45,10 @@
     ],
     "themes": [
       {
-        "label": "MySQL",
+        "label": "MySQL Dark",
         "uiTheme": "vs-dark",
         "path": "./themes/mysql-dark.json"
       }
-    ],
-    "configurationDefaults": {
-      "workbench.colorTheme": "MySQL"
-    }
+    ]
   }
 }
