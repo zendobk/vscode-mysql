@@ -1,54 +1,29 @@
-# MySQL Extension for VS Code
+# MySQL Syntax
 
-Welcome to the MySQL extension for Visual Studio Code. This extension provides a seamless experience for managing MySQL databases directly from your VS Code editor.
+This Visual Studio Code extension provides MySQL syntax highlighting, token colors for dark themes and code snippets.
 
 ## Features
 
-- Connect to MySQL databases.
-- Execute SQL queries and view results.
-- Manage database objects such as tables, views, and procedures.
-- Syntax highlighting and IntelliSense for SQL.
+- **Syntax Highlighting**: Enhanced syntax highlighting for MySQL scripts, making it easier to read and write complex queries. This feature supports various MySQL keywords, functions, and operators, ensuring that your code is visually distinct and easy to navigate.
+- **Token Colors**: Provides a set of predefined token colors optimized for dark themes, ensuring better readability and a pleasant coding experience. The colors are carefully chosen to reduce eye strain and improve code comprehension.
+- **Code Snippets**: Useful code snippets to speed up MySQL development. These snippets include common SQL statements, table creation scripts, and other frequently used commands, allowing you to write code more efficiently.
 
-\!\[MySQL Extension Features\]\(images/mysql-extension-features.png\)
+## Installation
 
-> Tip: Utilize animations to demonstrate your extension's features effectively. Short, focused animations are recommended.
+1. Open Visual Studio Code.
+2. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.
+3. Search for `vscode-mysql`.
+4. Click Install.
 
-## Requirements
+## Usage
 
-- Visual Studio Code v1.50.0 or higher.
-- MySQL Server v5.7 or higher.
+- Open a `.sql` file to see the syntax highlighting in action.
+- Start typing to see code snippets suggestions.
 
-## Extension Settings
+## Contributing
 
-This extension contributes the following settings:
+Contributions are welcome! Please open an issue or submit a pull request.
 
-* `mysql.enable`: Enable/disable the MySQL extension.
-* `mysql.connectionTimeout`: Set the connection timeout duration.
+## License
 
-## Known Issues
-
-- Connection may fail if the server is not reachable.
-- Syntax highlighting might not cover all SQL keywords.
-
-## Release Notes
-
-### 1.0.0
-
-Initial release of the MySQL extension.
-
----
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy using the MySQL extension!**
+This project is licensed under the MIT License.

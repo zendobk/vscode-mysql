@@ -1,0 +1,294 @@
+{
+  "Select all columns from a table": {
+    "prefix": "SELECT * FROM ${1:table_name};",
+    "body": ["SELECT * FROM ${1:table_name};"]
+  },
+  "Insert a new row into a table": {
+    "prefix": "INSERT INTO ${1:table_name} (${2:column1}, ${3:column2}) VALUES (${4:value1}, ${5:value2});",
+    "body": [
+      "INSERT INTO ${1:table_name}",
+      "  (${2:column1}, ${3:column2})",
+      "VALUES (",
+      "  ${4:value1},",
+      "  ${5:value2}",
+      ");"
+    ]
+  },
+  "Update existing rows in a table": {
+    "prefix": "UPDATE ${1:table_name} SET ${2:column1} = ${3:value1} WHERE ${4:condition};",
+    "body": [
+      "UPDATE ${1:table_name} SET ${2:column1} = ${3:value1} WHERE ${4:condition};"
+    ]
+  },
+  "Delete rows from a table": {
+    "prefix": "DELETE FROM ${1:table_name} WHERE ${2:condition};",
+    "body": ["DELETE FROM ${1:table_name} WHERE ${2:condition};"]
+  },
+  "Create a new table": {
+    "prefix": "CREATE TABLE ${1:table_name} (${2:column1} ${3:datatype1}, ${4:column2} ${5:datatype2});",
+    "body": [
+      "CREATE TABLE ${1:table_name} (",
+      "  ${2:column1} ${3:datatype1},",
+      "  ${4:column2} ${5:datatype2}",
+      ");"
+    ]
+  },
+  "Add a new column to an existing table": {
+    "prefix": "ALTER TABLE ${1:table_name} ADD COLUMN ${2:column_name} ${3:datatype};",
+    "body": [
+      "ALTER TABLE ${1:table_name} ADD COLUMN ${2:column_name} ${3:datatype};"
+    ]
+  },
+  "Drop a table": {
+    "prefix": "DROP TABLE ${1:table_name};",
+    "body": ["DROP TABLE ${1:table_name};"]
+  },
+  "Create a new database": {
+    "prefix": "CREATE DATABASE ${1:database_name};",
+    "body": ["CREATE DATABASE ${1:database_name};"]
+  },
+  "Drop a database": {
+    "prefix": "DROP DATABASE ${1:database_name};",
+    "body": ["DROP DATABASE ${1:database_name};"]
+  },
+  "Select a database to use": {
+    "prefix": "USE ${1:database_name};",
+    "body": ["USE ${1:database_name};"]
+  },
+  "Show all tables in the current database": {
+    "prefix": "SHOW TABLES;",
+    "body": ["SHOW TABLES;"]
+  },
+  "Describe the structure of a table": {
+    "prefix": "DESCRIBE ${1:table_name};",
+    "body": ["DESCRIBE ${1:table_name};"]
+  },
+  "Show all databases": {
+    "prefix": "SHOW DATABASES;",
+    "body": ["SHOW DATABASES;"]
+  },
+  "Show columns of a table": {
+    "prefix": "SHOW COLUMNS FROM ${1:table_name};",
+    "body": ["SHOW COLUMNS FROM ${1:table_name};"]
+  },
+  "Add a primary key to a table": {
+    "prefix": "ALTER TABLE ${1:table_name} ADD PRIMARY KEY (${2:column_name});",
+    "body": ["ALTER TABLE ${1:table_name} ADD PRIMARY KEY (${2:column_name});"]
+  },
+  "Add a foreign key to a table": {
+    "prefix": "ALTER TABLE ${1:table_name} ADD FOREIGN KEY (${2:column_name}) REFERENCES ${3:referenced_table}(${4:referenced_column});",
+    "body": [
+      "ALTER TABLE ${1:table_name} ADD FOREIGN KEY (${2:column_name}) REFERENCES ${3:referenced_table}(${4:referenced_column});"
+    ]
+  },
+  "Drop a column from a table": {
+    "prefix": "ALTER TABLE ${1:table_name} DROP COLUMN ${2:column_name};",
+    "body": ["ALTER TABLE ${1:table_name} DROP COLUMN ${2:column_name};"]
+  },
+  "Rename a table": {
+    "prefix": "RENAME TABLE ${1:old_table_name} TO ${2:new_table_name};",
+    "body": ["RENAME TABLE ${1:old_table_name} TO ${2:new_table_name};"]
+  },
+  "Rename a column in a table": {
+    "prefix": "ALTER TABLE ${1:table_name} CHANGE ${2:old_column_name} ${3:new_column_name} ${4:datatype};",
+    "body": [
+      "ALTER TABLE ${1:table_name} CHANGE ${2:old_column_name} ${3:new_column_name} ${4:datatype};"
+    ]
+  },
+  "Create an index on a table": {
+    "prefix": "CREATE INDEX ${1:index_name} ON ${2:table_name}(${3:column_name});",
+    "body": [
+      "CREATE INDEX ${1:index_name} ON ${2:table_name}(${3:column_name});"
+    ]
+  },
+  "Drop an index from a table": {
+    "prefix": "DROP INDEX ${1:index_name} ON ${2:table_name};",
+    "body": ["DROP INDEX ${1:index_name} ON ${2:table_name};"]
+  },
+  "Remove all rows from a table without logging individual row deletions": {
+    "prefix": "TRUNCATE TABLE ${1:table_name};",
+    "body": ["TRUNCATE TABLE ${1:table_name};"]
+  },
+  "Show all indexes on a table": {
+    "prefix": "SHOW INDEXES FROM ${1:table_name};",
+    "body": ["SHOW INDEXES FROM ${1:table_name};"]
+  },
+  "Show the status of the MySQL server": {
+    "prefix": "SHOW STATUS;",
+    "body": ["SHOW STATUS;"]
+  },
+  "Show the system variables of the MySQL server": {
+    "prefix": "SHOW VARIABLES;",
+    "body": ["SHOW VARIABLES;"]
+  },
+  "Show the list of active processes": {
+    "prefix": "SHOW PROCESSLIST;",
+    "body": ["SHOW PROCESSLIST;"]
+  },
+  "Grant privileges to a user": {
+    "prefix": "GRANT ${1:privileges} ON ${2:database_name}.${3:table_name} TO '${4:user}'@'${5:host}';",
+    "body": [
+      "GRANT ${1:privileges} ON ${2:database_name}.${3:table_name} TO '${4:user}'@'${5:host}';"
+    ]
+  },
+  "Revoke privileges from a user": {
+    "prefix": "REVOKE ${1:privileges} ON ${2:database_name}.${3:table_name} FROM '${4:user}'@'${5:host}';",
+    "body": [
+      "REVOKE ${1:privileges} ON ${2:database_name}.${3:table_name} FROM '${4:user}'@'${5:host}';"
+    ]
+  },
+  "Reload the privileges from the grant tables in the mysql database": {
+    "prefix": "FLUSH PRIVILEGES;",
+    "body": ["FLUSH PRIVILEGES;"]
+  },
+  "Show the privileges granted to a user": {
+    "prefix": "SHOW GRANTS FOR '${1:user}'@'${2:host}';",
+    "body": ["SHOW GRANTS FOR '${1:user}'@'${2:host}';"]
+  },
+  "Create a new MySQL user": {
+    "prefix": "CREATE USER '${1:user}'@'${2:host}' IDENTIFIED BY '${3:password}';",
+    "body": [
+      "CREATE USER '${1:user}'@'${2:host}' IDENTIFIED BY '${3:password}';"
+    ]
+  },
+  "Drop a MySQL user": {
+    "prefix": "DROP USER '${1:user}'@'${2:host}';",
+    "body": ["DROP USER '${1:user}'@'${2:host}';"]
+  },
+  "Show the CREATE TABLE statement for a table": {
+    "prefix": "SHOW CREATE TABLE ${1:table_name};",
+    "body": ["SHOW CREATE TABLE ${1:table_name};"]
+  },
+  "Show the CREATE DATABASE statement for a database": {
+    "prefix": "SHOW CREATE DATABASE ${1:database_name};",
+    "body": ["SHOW CREATE DATABASE ${1:database_name};"]
+  },
+  "Optimize a table": {
+    "prefix": "OPTIMIZE TABLE ${1:table_name};",
+    "body": ["OPTIMIZE TABLE ${1:table_name};"]
+  },
+  "Analyze a table": {
+    "prefix": "ANALYZE TABLE ${1:table_name};",
+    "body": ["ANALYZE TABLE ${1:table_name};"]
+  },
+  "Repair a table": {
+    "prefix": "REPAIR TABLE ${1:table_name};",
+    "body": ["REPAIR TABLE ${1:table_name};"]
+  },
+  "Check a table for errors": {
+    "prefix": "CHECK TABLE ${1:table_name};",
+    "body": ["CHECK TABLE ${1:table_name};"]
+  },
+  "Show the status of a storage engine": {
+    "prefix": "SHOW ENGINE ${1:engine_name} STATUS;",
+    "body": ["SHOW ENGINE ${1:engine_name} STATUS;"]
+  },
+  "Show available storage engines": {
+    "prefix": "SHOW ENGINES;",
+    "body": ["SHOW ENGINES;"]
+  },
+  "Show the status of the master replication server": {
+    "prefix": "SHOW MASTER STATUS;",
+    "body": ["SHOW MASTER STATUS;"]
+  },
+  "Show the status of the slave replication server": {
+    "prefix": "SHOW SLAVE STATUS;",
+    "body": ["SHOW SLAVE STATUS;"]
+  },
+  "Show the status of the tables in the current database": {
+    "prefix": "SHOW TABLE STATUS;",
+    "body": ["SHOW TABLE STATUS;"]
+  },
+  "Show the triggers in the current database": {
+    "prefix": "SHOW TRIGGERS;",
+    "body": ["SHOW TRIGGERS;"]
+  },
+  "Show the events in the current database": {
+    "prefix": "SHOW EVENTS;",
+    "body": ["SHOW EVENTS;"]
+  },
+  "Show the installed plugins": {
+    "prefix": "SHOW PLUGINS;",
+    "body": ["SHOW PLUGINS;"]
+  },
+  "Show the available character sets": {
+    "prefix": "SHOW CHARACTER SET;",
+    "body": ["SHOW CHARACTER SET;"]
+  },
+  "Show the available collations": {
+    "prefix": "SHOW COLLATION;",
+    "body": ["SHOW COLLATION;"]
+  },
+  "Show the available privileges": {
+    "prefix": "SHOW PRIVILEGES;",
+    "body": ["SHOW PRIVILEGES;"]
+  },
+  "Show the stored procedures in the current database": {
+    "prefix": "SHOW PROCEDURE STATUS;",
+    "body": ["SHOW PROCEDURE STATUS;"]
+  },
+  "Show the stored functions in the current database": {
+    "prefix": "SHOW FUNCTION STATUS;",
+    "body": ["SHOW FUNCTION STATUS;"]
+  },
+  "Show the CREATE PROCEDURE statement for a stored procedure": {
+    "prefix": "SHOW CREATE PROCEDURE ${1:procedure_name};",
+    "body": ["SHOW CREATE PROCEDURE ${1:procedure_name};"]
+  },
+  "Show the CREATE FUNCTION statement for a stored function": {
+    "prefix": "SHOW CREATE FUNCTION ${1:function_name};",
+    "body": ["SHOW CREATE FUNCTION ${1:function_name};"]
+  },
+  "Show the CREATE TRIGGER statement for a trigger": {
+    "prefix": "SHOW CREATE TRIGGER ${1:trigger_name};",
+    "body": ["SHOW CREATE TRIGGER ${1:trigger_name};"]
+  },
+  "Show the CREATE EVENT statement for an event": {
+    "prefix": "SHOW CREATE EVENT ${1:event_name};",
+    "body": ["SHOW CREATE EVENT ${1:event_name};"]
+  },
+  "Show the CREATE VIEW statement for a view": {
+    "prefix": "SHOW CREATE VIEW ${1:view_name};",
+    "body": ["SHOW CREATE VIEW ${1:view_name};"]
+  },
+  "Show the views in the current database": {
+    "prefix": "SHOW FULL TABLES WHERE Table_type = 'VIEW';",
+    "body": ["SHOW FULL TABLES WHERE Table_type = 'VIEW';"]
+  },
+  "Show the full list of active processes": {
+    "prefix": "SHOW FULL PROCESSLIST;",
+    "body": ["SHOW FULL PROCESSLIST;"]
+  },
+  "Kill a MySQL process": {
+    "prefix": "KILL ${1:process_id};",
+    "body": ["KILL ${1:process_id};"]
+  },
+  "Set a MySQL system variable": {
+    "prefix": "SET ${1:variable_name} = ${2:value};",
+    "body": ["SET ${1:variable_name} = ${2:value};"]
+  },
+  "Reset the query cache": {
+    "prefix": "RESET QUERY CACHE;",
+    "body": ["RESET QUERY CACHE;"]
+  },
+  "Flush the query cache": {
+    "prefix": "FLUSH QUERY CACHE;",
+    "body": ["FLUSH QUERY CACHE;"]
+  },
+  "Flush all logs": {
+    "prefix": "FLUSH LOGS;",
+    "body": ["FLUSH LOGS;"]
+  },
+  "Flush all tables": {
+    "prefix": "FLUSH TABLES;",
+    "body": ["FLUSH TABLES;"]
+  },
+  "Flush all host cache": {
+    "prefix": "FLUSH HOSTS;",
+    "body": ["FLUSH HOSTS;"]
+  },
+  "Reset status variables": {
+    "prefix": "FLUSH STATUS;",
+    "body": ["FLUSH STATUS;"]
+  }
+}

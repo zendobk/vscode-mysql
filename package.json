@@ -2,7 +2,7 @@
   "name": "mysql",
   "displayName": "MySQL",
   "description": "MySQL language support",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "publisher": "zendobk",
   "author": {
     "name": "Dao Nguyen",
@@ -33,7 +33,7 @@
         "extensions": [
           ".sql"
         ],
-        "configuration": "./language-configuration.json"
+        "configuration": "./languages/mysql.language-configuration.json"
       }
     ],
     "grammars": [
@@ -42,6 +42,86 @@
         "scopeName": "source.sql",
         "path": "./syntaxes/mysql.tmLanguage.json"
       }
-    ]
+    ],
+    "snippets": [
+      {
+        "language": "mysql",
+        "path": "./snippets/mysql.code-snippets.json"
+      }
+    ],
+    "configurationDefaults": {
+      "editor.fontSize": 12,
+      "editor.lineHeight": 14,
+      "editor.tokenColorCustomizations": {
+        "textMateRules": [
+          {
+            "scope": "comment.line.double-dash.sql, comment.block.sql, comment.line.hash.sql, comment.conditional.sql",
+            "settings": {
+              "foreground": "#009B31"
+            }
+          },
+          {
+            "scope": "keyword.control.sql, keyword.operator.sql, keyword.operator.advanced.sql",
+            "settings": {
+              "foreground": "#529BD8"
+            }
+          },
+          {
+            "scope": "storage.type.sql",
+            "settings": {
+              "foreground": "#B57AFF"
+            }
+          },
+          {
+            "scope": "support.function.sql, support.function.temporal.sql, support.function.user-defined.sql",
+            "settings": {
+              "foreground": "#C0C0C0"
+            }
+          },
+          {
+            "scope": "string.quoted.single.sql",
+            "settings": {
+              "foreground": "#CA6E6E"
+            }
+          },
+          {
+            "scope": "string.quoted.double.sql, string.quoted.multi-line.sql, invalid.unclosed.string.sql",
+            "settings": {
+              "foreground": "#E04978"
+            }
+          },
+          {
+            "scope": "string.quoted.backtick.sql",
+            "settings": {
+              "foreground": "#F9B746"
+            }
+          },
+          {
+            "scope": "constant.numeric.sql",
+            "settings": {
+              "foreground": "#B57AFF"
+            }
+          },
+          {
+            "scope": "variable.other.sql, variable.global.sql, variable.session.sql",
+            "settings": {
+              "foreground": "#C0C0C0"
+            }
+          },
+          {
+            "scope": "invalid.illegal.sql",
+            "settings": {
+              "foreground": "#8F2F31"
+            }
+          },
+          {
+            "scope": "meta.query.subquery.sql, meta.embedded.block.sql",
+            "settings": {
+              "foreground": "#D4D4D4"
+            }
+          }
+        ]
+      }
+    }
   }
 }
