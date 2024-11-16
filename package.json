@@ -1,8 +1,8 @@
 {
   "name": "mysql",
   "displayName": "MySQL",
-  "description": "",
-  "version": "0.0.2",
+  "description": "MySQL language support",
+  "version": "0.0.3",
   "publisher": "zendobk",
   "author": {
     "name": "Dao Nguyen",
@@ -39,15 +39,8 @@
     "grammars": [
       {
         "language": "mysql",
-        "scopeName": "source.mysql",
+        "scopeName": "source.sql",
         "path": "./syntaxes/mysql.tmLanguage.json"
-      }
-    ],
-    "themes": [
-      {
-        "label": "MySQL Dark",
-        "uiTheme": "vs-dark",
-        "path": "./themes/mysql-dark.json"
       }
     ]
   }
