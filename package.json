@@ -2,7 +2,7 @@
   "name": "mysql",
   "displayName": "MySQL",
   "description": "MySQL language support",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "publisher": "zendobk",
   "author": {
     "name": "Dao Nguyen",
@@ -51,28 +51,29 @@
     ],
     "configurationDefaults": {
       "editor.fontSize": 12,
+      "editor.bracketPairColorization.enabled": false,
       "editor.tokenColorCustomizations": {
         "textMateRules": [
           {
-            "scope": "keyword.control.sql, keyword.operator.function.sql",
+            "scope": "keyword.control.sql, keyword.client-command.sql, keyword.control.set.sql",
             "settings": {
               "foreground": "#569CD6"
             }
           },
           {
-            "scope": "support.function.sql, support.function.temporal.sql",
+            "scope": "storage.type.string.sql, storage.type.numeric.sql, storage.type.datetime.sql",
+            "settings": {
+              "foreground": "#9CDCFE"
+            }
+          },
+          {
+            "scope": "support.function.string.sql, support.function.numeric.sql, support.function.datetime.sql, support.function.advanced.sql",
             "settings": {
               "foreground": "#DCDCAA"
             }
           },
           {
-            "scope": "string.quoted.single.sql",
-            "settings": {
-              "foreground": "#CE9178"
-            }
-          },
-          {
-            "scope": "string.quoted.double.sql, string.quoted.multi-line.sql, string.quoted.backtick.sql",
+            "scope": "string.quoted.single.sql, string.quoted.double.sql, string.quoted.multi-line.sql, string.quoted.backtick.sql",
             "settings": {
               "foreground": "#CE9178"
             }
@@ -90,15 +91,9 @@
             }
           },
           {
-            "scope": "operator.symbol.sql, operator.symbol.advanced.sql",
+            "scope": "keyword.operator.sql, keyword.operator.advanced.sql",
             "settings": {
               "foreground": "#D4D4D4"
-            }
-          },
-          {
-            "scope": "operator.keyword.sql",
-            "settings": {
-              "foreground": "#9CDCFE"
             }
           },
           {
@@ -108,11 +103,13 @@
             }
           },
           {
-            "scope": "storage.type.sql",
+            "scope": [
+                "punctuation.definition.bracket"
+            ],
             "settings": {
-              "foreground": "#569CD6"
+                "foreground": "#D4D4D4"
             }
-          }
+        }
         ]
       }
     }

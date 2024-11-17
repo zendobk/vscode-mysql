@@ -20,6 +20,12 @@ This VSCode extension provides MySQL syntax highlighting, token colors for dark 
 - Open a `.sql` file to see the syntax highlighting in action.
 - Start typing to see code snippets suggestions.
 
+## Appendix
+
+- [Keywords and reserved words](https://dev.mysql.com/doc/mysqld-version-reference/en/keywords-8-4.html)
+- [Client commands](https://dev.mysql.com/doc/refman/8.4/en/mysql-commands.html)
+- [Data types](https://www.w3schools.com/mysql/mysql_datatypes.asp)
+
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request.
