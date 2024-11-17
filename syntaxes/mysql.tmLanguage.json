@@ -4,9 +4,6 @@
   "fileTypes": ["sql"],
   "patterns": [
     {
-      "include": "#comments"
-    },
-    {
       "include": "#keywords"
     },
     {
@@ -22,66 +19,27 @@
       "include": "#numbers"
     },
     {
+      "include": "#comments"
+    },
+    {
       "include": "#operators"
     },
     {
-      "include": "#variables"
+      "include": "#identifiers"
     },
     {
-      "include": "#errorHighlighting"
+      "include": "#dataTypes"
     },
     {
-      "include": "#advancedOperators"
-    },
-    {
-      "include": "#temporalDataFunctions"
-    },
-    {
-      "include": "#userDefinedSyntax"
-    },
-    {
-      "include": "#nestedQueries"
-    },
-    {
-      "include": "#macroEmbeddedSQL"
+      "include": "#errors"
     }
   ],
   "repository": {
-    "comments": {
-      "patterns": [
-        {
-          "name": "comment.line.double-dash.sql",
-          "match": "--.*$"
-        },
-        {
-          "name": "comment.block.sql",
-          "begin": "/\\*",
-          "end": "\\*/"
-        },
-        {
-          "name": "comment.line.hash.sql",
-          "match": "#.*$"
-        },
-        {
-          "name": "comment.conditional.sql",
-          "begin": "/\\*!",
-          "end": "\\*/"
-        }
-      ]
-    },
     "keywords": {
       "patterns": [
         {
           "name": "keyword.control.sql",
-          "match": "(?i)\\b(SELECT|INSERT|UPDATE|DELETE|FROM|WHERE|JOIN|LEFT|RIGHT|INNER|OUTER|ON|GROUP BY|ORDER BY|ASC|DESC|HAVING|AS|LIMIT|OFFSET|DISTINCT|UNION|ALL|INTO|VALUES|CREATE|TABLE|ALTER|DROP|DATABASE|INDEX|VIEW|TRIGGER|PROCEDURE|FUNCTION|IF|ELSE|THEN|END|LOOP|WHILE|REPEAT|DECLARE|SET|CALL|BEGIN|COMMIT|ROLLBACK|GRANT|REVOKE|USE|SHOW|DESCRIBE|EXPLAIN|LOCK|UNLOCK|WITH|RECURSIVE|CASE|WHEN|DEFAULT|FOREIGN|PRIMARY|KEY|AUTO_INCREMENT|REFERENCES|CONSTRAINT|CHECK|DEFAULT|UNIQUE|PARTITION BY|WINDOW|CUME_DIST|RANK|DENSE_RANK|ROW_NUMBER|WITH ROLLUP)\\b"
-        }
-      ]
-    },
-    "dataTypes": {
-      "patterns": [
-        {
-          "name": "storage.type.sql",
-          "match": "(?i)\\b(INT|INTEGER|SMALLINT|TINYINT|MEDIUMINT|BIGINT|DECIMAL|NUMERIC|FLOAT|DOUBLE|REAL|BIT|BOOLEAN|CHAR|VARCHAR|TEXT|TINYTEXT|MEDIUMTEXT|LONGTEXT|BLOB|TINYBLOB|MEDIUMBLOB|LONGBLOB|DATE|TIME|DATETIME|TIMESTAMP|YEAR|JSON|ENUM|SET)\\b"
+          "match": "(?i)\\b(SELECT|INSERT|UPDATE|DELETE|FROM|WHERE|JOIN|LEFT|RIGHT|INNER|OUTER|ON|GROUP BY|ORDER BY|ASC|DESC|HAVING|AS|LIMIT|OFFSET|DISTINCT|UNION|ALL|INTO|VALUES|CREATE|TABLE|ALTER|DROP|DATABASE|INDEX|VIEW|TRIGGER|PROCEDURE|FUNCTION|IF|ELSE|THEN|END|LOOP|WHILE|REPEAT|DECLARE|SET|CALL|BEGIN|COMMIT|ROLLBACK|GRANT|REVOKE|USE|SHOW|DESCRIBE|EXPLAIN|LOCK|UNLOCK|WITH|RECURSIVE|CASE|WHEN|DEFAULT|FOREIGN|PRIMARY|KEY|AUTO_INCREMENT|REFERENCES|CONSTRAINT|CHECK|DEFAULT|UNIQUE|PARTITION BY|WINDOW|CUME_DIST|RANK|DENSE_RANK|ROW_NUMBER|WITH ROLLUP|DELIMITER)\\b"
         }
       ]
     },
@@ -89,7 +47,7 @@
       "patterns": [
         {
           "name": "support.function.sql",
-          "match": "(?i)\\b(AVG|COUNT|MIN|MAX|SUM|UCASE|LCASE|MID|LEN|ROUND|NOW|FORMAT|CURDATE|CURTIME|DATE_ADD|DATE_SUB|DATEDIFF|TIMEDIFF|IFNULL|ISNULL|COALESCE|GREATEST|LEAST|CONCAT|SUBSTRING|CHAR_LENGTH|POSITION|LOCATE|INSTR|REPLACE|TRIM|LPAD|RPAD|CONVERT|CAST|UNHEX|HEX|MD5|SHA1|SHA2|AES_ENCRYPT|AES_DECRYPT|UUID|FLOOR|CEIL|CEILING|POWER|EXP|LOG|LN|PI|SIN|COS|TAN|ASIN|ACOS|ATAN|ATAN2|DEGREES|RADIANS|SIGN|SQRT|DATE_FORMAT|TIME_TO_SEC|SEC_TO_TIME|JSON_TABLE|ST_Distance)\\b"
+          "match": "(?i)\\b(AVG|COUNT|MIN|MAX|SUM|UCASE|LCASE|MID|LEN|ROUND|NOW|CURRENT_TIMESTAMP|FORMAT|CURDATE|CURTIME|DATE_ADD|DATE_SUB|DATEDIFF|TIMEDIFF|IFNULL|ISNULL|COALESCE|GREATEST|LEAST|CONCAT|SUBSTRING|CHAR_LENGTH|POSITION|LOCATE|INSTR|REPLACE|TRIM|LPAD|RPAD|CONVERT|CAST|UNHEX|HEX|MD5|SHA1|SHA2|AES_ENCRYPT|AES_DECRYPT|UUID|FLOOR|CEIL|CEILING|POWER|EXP|LOG|LN|PI|SIN|COS|TAN|ASIN|ACOS|ATAN|ATAN2|DEGREES|RADIANS|SIGN|SQRT|DATE_FORMAT|TIME_TO_SEC|SEC_TO_TIME|JSON_TABLE|ST_Distance)\\b"
         }
       ]
     },
@@ -149,27 +107,57 @@
         }
       ]
     },
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-dash.sql",
+          "match": "--.*$"
+        },
+        {
+          "name": "comment.block.sql",
+          "begin": "/\\*",
+          "end": "\\*/"
+        },
+        {
+          "name": "comment.line.hash.sql",
+          "match": "#.*$"
+        },
+        {
+          "name": "comment.conditional.sql",
+          "begin": "/\\*!",
+          "end": "\\*/"
+        }
+      ]
+    },
     "operators": {
       "patterns": [
         {
-          "name": "keyword.operator.sql",
-          "match": "[=><!~]+|(?i)\\b(AND|OR|NOT|IN|BETWEEN|LIKE|IS|NULL|EXISTS|ANY|ALL)\\b"
-        }
-      ]
-    },
-    "advancedOperators": {
-      "patterns": [
+          "name": "operator.symbol.sql",
+          "match": "[=><!~]+"
+        },
         {
-          "name": "keyword.operator.advanced.sql",
+          "name": "operator.symbol.advanced.sql",
           "match": "(\\->|\\->>|\\||\\&|\\^|\\~)"
+        },
+        {
+          "name": "operator.keyword.sql",
+          "match": "(?i)\\b(AND|OR|NOT|IN|BETWEEN|LIKE|IS|NULL|EXISTS|ANY|ALL)\\b"
         }
       ]
     },
-    "variables": {
+    "identifiers": {
       "patterns": [
         {
-          "name": "variable.other.sql",
-          "match": "@[a-zA-Z0-9_]+"
+          "name": "entity.name.function.sql",
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+        },
+        {
+          "name": "entity.name.table.sql",
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
+        },
+        {
+          "name": "entity.name.column.sql",
+          "match": "\\b[a-zA-Z_][a-zA-Z0-9_]*\\b"
         },
         {
           "name": "variable.global.sql",
@@ -178,63 +166,22 @@
         {
           "name": "variable.session.sql",
           "match": "@@session\\.[a-zA-Z0-9_]+"
-        }
-      ]
-    },
-    "errorHighlighting": {
-      "patterns": [
-        {
-          "name": "invalid.illegal.sql",
-          "match": "(?i)\\b(ERROR|UNEXPECTED|INCOMPLETE)\\b"
         },
         {
-          "name": "invalid.unclosed.string.sql",
-          "begin": "'",
-          "while": "(?:(?!').)*$"
+          "name": "variable.other.sql",
+          "match": "@[a-zA-Z0-9_]+"
+        },
+        {
+          "name": "variable.user-defined.sql",
+          "match": "\\b\\$[a-zA-Z0-9_]+\\b"
         }
       ]
     },
-    "temporalDataFunctions": {
+    "dataTypes": {
       "patterns": [
         {
-          "name": "support.function.temporal.sql",
-          "match": "(?i)\\b(DATE_ADD|DATE_SUB|DATE_FORMAT|CURDATE|CURTIME|TIME_TO_SEC|SEC_TO_TIME|DATEDIFF|TIMEDIFF)\\b"
-        }
-      ]
-    },
-    "nestedQueries": {
-      "patterns": [
-        {
-          "name": "meta.query.subquery.sql",
-          "begin": "(?i)\\(SELECT",
-          "end": "\\)",
-          "patterns": [
-            {
-              "include": "#keywords"
-            }
-          ]
-        }
-      ]
-    },
-    "macroEmbeddedSQL": {
-      "patterns": [
-        {
-          "name": "meta.embedded.block.sql",
-          "begin": "<%",
-          "end": "%>",
-          "patterns": [
-            {
-              "include": "source.language-specific"
-            }
-          ]
-        }
-      ]
-    },
-    "userDefinedSyntax": {
-      "patterns": [
-        {
-          "name": "support.function.user-defined.sql",
-          "match": "(?i)\\b(\\w+)\\b"
+          "name": "storage.type.sql",
+          "match": "(?i)\\b(INT|INTEGER|SMALLINT|TINYINT|MEDIUMINT|BIGINT|DECIMAL|NUMERIC|FLOAT|DOUBLE|REAL|BIT|BOOLEAN|CHAR|VARCHAR|TEXT|TINYTEXT|MEDIUMTEXT|LONGTEXT|BLOB|TINYBLOB|MEDIUMBLOB|LONGBLOB|DATE|TIME|DATETIME|TIMESTAMP|YEAR|JSON|ENUM|SET)\\b"
         }
       ]
     }

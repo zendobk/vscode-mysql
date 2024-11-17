@@ -1,6 +1,6 @@
-# MySQL Syntax
+# VSCode MySQL
 
-This Visual Studio Code extension provides MySQL syntax highlighting, token colors for dark themes and code snippets.
+This VSCode extension provides MySQL syntax highlighting, token colors for dark themes and code snippets.
 
 ## Features
 
