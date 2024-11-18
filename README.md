@@ -1,5 +1,7 @@
 # VSCode MySQL
 
+_[Donate with PayPal](https://paypal.me/zendobk)_
+
 This VSCode extension provides MySQL syntax highlighting, token colors for dark themes and code snippets.
 
 ## Features
