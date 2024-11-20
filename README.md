@@ -12,10 +12,12 @@ This VSCode extension provides MySQL syntax highlighting, token colors for dark 
 
 ## Installation
 
-1. Open Visual Studio Code.
-2. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.
-3. Search for `vscode-mysql`.
-4. Click Install.
+1. Download the `.vsix` file for the extension.
+2. Open Visual Studio Code.
+3. Go to the Extensions view by clicking on the Extensions icon in the Activity Bar on the side of the window.
+4. Click on the three-dot menu in the top right corner of the Extensions view.
+5. Select `Install from VSIX...`.
+6. Navigate to the downloaded `.vsix` file and select it to install.
 
 ## Usage
 
