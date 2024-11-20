@@ -2,7 +2,7 @@
   "name": "mysql",
   "displayName": "MySQL",
   "description": "MySQL language support",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "publisher": "zendobk",
   "author": {
     "name": "Dao Nguyen",
@@ -59,7 +59,7 @@
       "editor.tokenColorCustomizations": {
         "textMateRules": [
           {
-            "scope": "keyword.control.sql, keyword.client-command.sql, keyword.control.set.sql",
+            "scope": "keyword.control.sql, keyword.control.client.sql, keyword.control.set.sql",
             "settings": {
               "foreground": "#569CD6"
             }
