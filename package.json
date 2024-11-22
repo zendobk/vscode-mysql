@@ -1,9 +1,10 @@
 {
   "name": "mysql",
-  "displayName": "MySQL",
-  "description": "MySQL language support",
+  "displayName": "MySQL syntax highlighting & code snippets",
+  "description": "This VSCode extension provides MySQL syntax highlighting, token colors for dark themes and code snippets.",
   "version": "0.0.8",
   "publisher": "zendobk",
+  "icon": "images/mysql.png",
   "author": {
     "name": "Dao Nguyen",
     "email": "zendobk@gmail.com"

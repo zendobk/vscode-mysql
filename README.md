@@ -1,4 +1,4 @@
-# VSCode MySQL
+# MySQL syntax highlighting & code snippets
 
 _[Donate with PayPal](https://paypal.me/zendobk)_
 
