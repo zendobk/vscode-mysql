@@ -1,25 +1,43 @@
 {
   "name": "mysql",
   "displayName": "MySQL syntax highlighting & code snippets",
-  "description": "This VSCode extension provides MySQL syntax highlighting, token colors for dark themes and code snippets.",
-  "version": "0.0.8",
+  "description": "This VSCode extension provides MySQL syntax highlighting for dark themes and code snippets.",
+  "version": "0.0.9",
   "publisher": "zendobk",
-  "icon": "images/mysql.png",
+  "icon": "images/mysql-logo.png",
+  "galleryBanner": {
+    "color": "#F2F2F2",
+    "theme": "light"
+  },
+  "keywords": [
+    "mysql",
+    "syntax",
+    "highlighting",
+    "snippets"
+  ],
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "compatibility": {
+    "1.0.0": "1.0.0"
+  },
   "author": {
     "name": "Dao Nguyen",
     "email": "zendobk@gmail.com"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:zendobk/vscode-mysql.git"
+    "url": "https://github.com/zendobk/vscode-mysql"
+  },
+  "bugs": {
+    "url": "https://github.com/zendobk/vscode-mysql/issues"
   },
   "license": "MIT",
   "engines": {
-    "vscode": "^1.95.0"
+    "vscode": "^1.95.0",
+    "node": "^20.18.0"
   },
-  "categories": [
-    "Programming Languages"
-  ],
   "scripts": {
     "build": "npx vsce package"
   },
@@ -35,8 +53,8 @@
           ".sql"
         ],
         "icon": {
-          "light": "./images/mysql.svg",
-          "dark": "./images/mysql.svg"
+          "light": "./images/mysql-icon.svg",
+          "dark": "./images/mysql-icon.svg"
         },
         "configuration": "./languages/mysql.language-configuration.json"
       }
@@ -45,7 +63,7 @@
       {
         "language": "mysql",
         "scopeName": "source.sql",
-        "path": "./syntaxes/mysql.tmLanguage.json"
+        "path": "./syntaxes/mysql.tmGrammar.json"
       }
     ],
     "snippets": [
@@ -55,8 +73,14 @@
       }
     ],
     "configurationDefaults": {
-      "editor.fontSize": 12,
-      "editor.bracketPairColorization.enabled": false,
+      "[mysql]": {
+        "editor.fontSize": 12,
+        "editor.bracketPairColorization.enabled": false
+      },
+      "files.associations": {
+        "*.sql": "mysql",
+        "*.sql.*": "mysql"
+      },
       "editor.tokenColorCustomizations": {
         "textMateRules": [
           {

@@ -2,12 +2,11 @@
 
 _[Donate with PayPal](https://paypal.me/zendobk)_
 
-This VSCode extension provides MySQL syntax highlighting, token colors for dark themes and code snippets.
+This VSCode extension provides MySQL syntax highlighting for dark themes and code snippets.
 
 ## Features
 
 - **Syntax Highlighting**: Enhanced syntax highlighting for MySQL scripts, making it easier to read and write complex queries. This feature supports various MySQL keywords, functions, and operators, ensuring that your code is visually distinct and easy to navigate.
-- **Token Colors**: Provides a set of predefined token colors optimized for dark themes, ensuring better readability and a pleasant coding experience. The colors are carefully chosen to reduce eye strain and improve code comprehension.
 - **Code Snippets**: Useful code snippets to speed up MySQL development. These snippets include common SQL statements, table creation scripts, and other frequently used commands, allowing you to write code more efficiently.
 
 ## Installation
