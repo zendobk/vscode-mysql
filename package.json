@@ -2,7 +2,7 @@
   "name": "mysql",
   "displayName": "MySQL syntax highlighting & code snippets",
   "description": "This VSCode extension provides MySQL syntax highlighting for dark themes and code snippets.",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "publisher": "zendobk",
   "icon": "images/mysql-logo.png",
   "galleryBanner": {
@@ -74,7 +74,6 @@
     ],
     "configurationDefaults": {
       "[mysql]": {
-        "editor.fontSize": 12,
         "editor.bracketPairColorization.enabled": false
       },
       "files.associations": {
